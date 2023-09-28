@@ -1,1 +1,1 @@
-API for the EELabs map. It contains both the images and the MongoDB database.
+API for the EELabs map. It contains both the images and the MongoDB database.index.py contains the main part of the API, mongo_utils.py the functions for MongoDB queries, and VIIRS_map_utils.py the calculation functions.
