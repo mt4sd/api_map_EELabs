@@ -100,10 +100,10 @@ class Values_map(Resource):
 
 server = Flask(__name__, static_folder='static')
 server.register_blueprint(devices_v1_0_bp)
-app = dash.Dash(__name__, server=server)
+# app = dash.Dash(__name__, server=server)
 
 
-app.layout = html.Div()
+# app.layout = html.Div()
 
 
 if __name__ == '__main__':
@@ -112,7 +112,7 @@ if __name__ == '__main__':
             format="%(asctime)-15s [%(levelname)s] %(funcName)s: %(message)s",
             level=logging.INFO)
 
-    app.run_server(debug=os.getenv("DEBUG") == 'True', port=os.getenv("PORT"), host='0.0.0.0')
+    # app.run_server(debug=os.getenv("DEBUG") == 'True', port=os.getenv("PORT"), host='0.0.0.0')
     #app.run_server()
-    # from waitress import serve
-    # serve(app.server,host='0.0.0.0',port=os.getenv("PORT"))
+    from waitress import serve
+    serve(server,host='0.0.0.0',port=os.getenv("PORT"))#app.
